@@ -1,4 +1,6 @@
 .nav {
+  display: flex;
+
   &__link {
     position: relative;
     display: block;
@@ -7,10 +9,11 @@
     line-height: 60px;
     padding: 0;
     font-family: $page-font;
-    font-weight: bold;
+    
     text-decoration: none;
     color: #000;
     text-transform: uppercase;
+    transition: color $transitionTime;
 
     &--is-active {
       color: $main-theme-color;

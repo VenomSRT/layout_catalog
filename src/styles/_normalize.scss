@@ -15,12 +15,13 @@ p {
   margin: 0;
 }
 
-body * {
-  display: flex;
-}
-
+h1,
 h2 {
   font-weight: 400;
+}
+
+a {
+  display: flex;
 }
 
 main {
