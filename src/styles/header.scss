@@ -1,17 +1,81 @@
 /*-------HEADER STYLE-------------------------------------*/
 
 .header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  padding-right: 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  box-shadow: $elements-shadow;
+
+  @media (min-width: 1024px) {
+    padding-right: 50px;
+    flex-direction: row;
+  }
 
   &__logo-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
     flex-grow: 1;
-    margin: 10px 50px;
+    padding: $logoContainerPadding;
+    box-shadow: $elements-shadow;
+    background-color: #fff;
+    z-index: 1;
+
+    @media (min-width: 1024px) {
+      justify-content: start;
+      padding: 0;
+      margin: 10px 50px;
+      box-shadow: unset;
+    }
   }
 
   &__site-logo {
+    width: $logoMobileSize;
+    height: $logoMobileSize;
+
+    @media (min-width: 1024px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked + .nav {
+      top: $logoContainerPadding * 2 + $logoMobileSize;
+    }
+
+    @media (min-width: 1024px) {
+      position: static;
+    }
+  }
+
+  &__menu-button {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 50px;
     width: 40px;
-    height: 40px;
+    height: 30px;
+    border-top: 4px solid $main-theme-color;
+    border-bottom: 4px solid $main-theme-color;
+    cursor: pointer;
+    z-index: 1;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      width: 100%;
+      height: 4px;
+      background-color: $main-theme-color;
+    }
   }
 }
